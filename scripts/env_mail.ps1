@@ -1,0 +1,2 @@
+﻿import-module activedirectory
+Get-ADUser -Filter { department -like "OUMed/ALR*" -and (-not (lastLogonTimeStamp -gt 0))} -SearchBase "OU=users,OU=OUMed,DC=ORG,DC=FR" -Properties employeeType | Set-ADUser -Replace @{employeeType=7}

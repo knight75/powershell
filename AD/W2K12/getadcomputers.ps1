@@ -1,0 +1,2 @@
+﻿Import-Module activedirectory
+Get-ADComputer -Filter { OperatingSystem -notLike '*Windows Server*' } -Properties OperatingSystem | Select Name, OperatingSystem | export-csv -path d:\scripts\computers.csv
